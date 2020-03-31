@@ -1,2 +1,2 @@
-# Golang-mysql-graphql
-Example Golang graphql api with mysql db.
+# DOCKER: Golang-mysql-graphql
+Parulian DOCKER GOLANG MYSQL GRAPHQL
