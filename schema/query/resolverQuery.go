@@ -2,12 +2,19 @@ package query
 
 import (
 	"pintekid/config"
+	"pintekid/libs/security"
 	"pintekid/schema/types"
 
 	"github.com/graphql-go/graphql"
 )
 
 func ProductResolve(param graphql.ResolveParams) (interface{}, error) {
+
+	_, err := security.ValidateJWT(param.Context.Value("token").(string))
+	if err != nil {
+		return nil, err
+	}
+
 	var a types.Product
 	var b []types.Product
 	db, err := config.GetConnection()
@@ -34,6 +41,10 @@ func ProductResolve(param graphql.ResolveParams) (interface{}, error) {
 }
 
 func ProductSingleResolve(param graphql.ResolveParams) (interface{}, error) {
+	_, err := security.ValidateJWT(param.Context.Value("token").(string))
+	if err != nil {
+		return nil, err
+	}
 	var a types.Product
 	var b []types.Product
 	db, err := config.GetConnection()
