@@ -20,14 +20,12 @@ EXPOSE 9000
 
 CMD [ "/app/pintekid" ]
 
+
+
+#SKIP BY PARULIAN
 #RUN mkdir /app
-
 #RUN . /app
-
-
-
 #ENV GOPATH=/app
-
 #RUN go get github.com/qodrorid/godaemon
 #RUN go get github.com/gorilla/mux
 #RUN go get github.com/gorilla/handlers
@@ -36,10 +34,5 @@ CMD [ "/app/pintekid" ]
 #RUN go get github.com/joho/godotenv
 #UN go get github.com/badoux/checkmail
 #RUN go get golang.org/x/crypto/bcrypt
-
-
-
-
-
 #RUN go build -o main .
 
