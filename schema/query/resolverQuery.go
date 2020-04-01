@@ -42,7 +42,7 @@ func ProductSingleResolve(param graphql.ResolveParams) (interface{}, error) {
 	}
 	b = b[:0]
 
-	id_pro, _ := params.Args["ID_PRO"].(string)
+	id_pro, _ := param.Args["ID_PRO"].(string)
 
 	result, err := db.Query("select ID_PRO,PRO_NAME,QTE_IN_STOCK,ifnull(PRO_IMG,'') from Products where ID_PRO = ?", id_pro)
 	if err != nil {
