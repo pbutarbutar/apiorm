@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"pintekid/config"
 	"pintekid/libs/security"
 	"pintekid/schema/mutation"
 	"pintekid/schema/query"
@@ -47,6 +48,6 @@ func main() {
 	http.Handle("/graphiql", graphiqlHandler)
 	http.HandleFunc("/login", security.CreateTokenEndpoint)
 
-	http.ListenAndServe(":9001", nil)
+	http.ListenAndServe(":"+config.PORT, nil)
 
 }
