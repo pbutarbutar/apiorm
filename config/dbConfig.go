@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-const PORT = "9000"
+const PORT = "9001"
 
 func GetConnection() (*sql.DB, error) {
 	db, err := sql.Open("mysql", "root:@root@tcp(localhost:3666)/pintekid")

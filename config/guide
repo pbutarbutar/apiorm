@@ -1,0 +1,53 @@
+Update my Reset and my Simulation Graphql:
+
+1. Language -> Go version go1.13.3 darwin/amd64
+2. DB ->  mysql:5.7
+3. Docker -> Version: 19.03.5
+    Use docker-compose 
+
+Security access -> use JWT
+
+Step/Logic : 
+Endpoint /login --> Use HTTP Basic Authentication combine with DB mysql  
+           JWT -> token claim to is Authentication access
+
+the endpoint I have been try in AWS running on OS Ubuntu 18, and then compiling with docker for running services Go and MySQL
+IP Endpoint published in http://3.88.248.136:9000
+
+The sourcecode I stored in github : https://github.com/pbutarbutar/apiorm.git 
+
+Example for Graphql
+I have a table in mysql as example for simulate query data.
+
+1. Query with is Authentication token valid :
+    #Get multiple data  
+        {
+            Productssingle(ID_PRO:"")
+                {
+                    ID_PRO,
+                    PRO_NAME,
+                    QTE_IN_STOCK,
+                    PRO_IMG,
+                    PRICE
+                }
+                
+        }
+     #example: http://3.88.248.136:9000/graphql?Query={Productssingle(ID_PRO:""){ID_PRO,PRO_NAME,QTE_IN_STOCK,PRO_IMG,PRICE}}
+
+    #Get single data  
+        {
+            Products(ID_PRO:"")
+                {
+                    ID_PRO,
+                    PRO_NAME,
+                    QTE_IN_STOCK
+                }
+                
+        }
+    #example: http://3.88.248.136:9000/graphql?Query={Products(ID_PRO:"CCCCICINGC"){ID_PRO,PRO_NAME,QTE_IN_STOCK}}
+
+2. mutation with is Authentication token valid
+    CreateProducts(ID_PRO:"parul",PRO_NAME:"SUMBAWA",QTE_IN_STOCK:123,PRO_IMG:"POER"){PRO_NAME}}
+    #example: http://3.88.248.136:9000/graphql?Query=mutation{ProductTypes:CreateProducts(ID_PRO:"parul",PRO_NAME:"SUMBAWA",QTE_IN_STOCK:123,PRO_IMG:"POER"){PRO_NAME}}
+
+Overall the graphql concept so far I have understood. For next to do may have spec requiremen and also included flow diagram
