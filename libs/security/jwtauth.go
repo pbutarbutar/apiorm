@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/mitchellh/mapstructure"
@@ -35,10 +36,18 @@ func CreateTokenEndpoint(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+	atClaims := jwt.MapClaims{}
+	atClaims["authorized"] = true
+	atClaims["username"] = username
+	atClaims["password"] = password
+	atClaims["exp"] = time.Now().Add(time.Minute * 15).Unix()
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)
+	/*jwt.MapClaims{
 		"username": username, //user.Username,
 		"password": password, //user.Password,
-	})
+		//"exp":      time.Now().Add(time.Minute * 15).Unix(),
+	})*/
 	tokenString, error := token.SignedString(jwtSecret)
 	if error != nil {
 		fmt.Println(error)

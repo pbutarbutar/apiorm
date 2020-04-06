@@ -1,0 +1,23 @@
+select loan_app.app_num, loan_app.id as loan_app_id, loan_app.created_at, loan_app.updated_at, 
+				student.fullname as student_name, student.phone as student_phone, loan_app.principal, 
+				institution.name as institution_name, loan_app_details.app_type as application_type, 
+				setting_application_status.backoffice_desc as status, applicant.fullname as applicant_name, 
+				coalesce(loan_app_analysis.q_46,0) as risk_level, coalesce(loan_app_analysis.q_45,0) as credit_score
+				from loan_app left join loan_app_details on loan_app.id = loan_app_details.loan_app_id 
+				inner join loan_app_status on loan_app.id = loan_app_status.loan_app_id 
+				inner join applicant on loan_app_details.applicant_id = applicant.id 
+				left join student on loan_app_details.student_id = student.id 
+				left join loan_app_analysis on loan_app.id = loan_app_analysis.loan_app_id 
+				left join institution on loan_app_details.institution_id = institution.id 
+				left join setting_institution_category on institution.institution_cat_id = setting_institution_category.id 
+				inner join setting_application_status on setting_application_status.id = loan_app_status.status_id 
+				where loan_app_status.status_id = 8 
+				 order by loan_app.updated_at desc
+
+
+
+
+                 &a.Id, &a.AppNum, &a.LoanType,
+			&a.Principal, &a.Tenure, &a.DownPayment, &a.Provision,
+			&a.AdminFeeId, &a.Interest, &a.StartPaidOn, &a.MaxPaidOn,
+			&a.SoftDelete, &a.CreatedAt, &a.UpdatedAt,

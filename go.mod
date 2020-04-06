@@ -8,4 +8,5 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/graphql-go/graphql v0.7.9
 	github.com/mitchellh/mapstructure v1.2.2
+	gopkg.in/guregu/null.v3 v3.4.0
 )

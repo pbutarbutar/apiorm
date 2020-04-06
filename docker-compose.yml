@@ -9,6 +9,9 @@ services:
      restart: on-failure
      environment:
        - DATABASE_HOST=db
+       - DATABASE_DBNAME=pintekid
+       - DATABASE_USER=root
+       - DATABASE_PASSWORD=@root
      volumes:
        - .:/app/src
    db:
