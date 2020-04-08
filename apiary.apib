@@ -3,7 +3,7 @@ HOST: http://3.88.248.136:9000/
 
 # PINTEKID API 
 
-This is API Pintek to access for collect data Loan Borrower Education Loan and Borrower SME Loan
+This is API Pintek to access collecting data loan borrower like Education Loan and SME Loan
 
 
 # GRAPHQL API PINTEK
@@ -11,14 +11,14 @@ This is API Pintek to access for collect data Loan Borrower Education Loan and B
 This is Pintek's API documentation. Here you will find the guidelines for getting started with the API.
 
 
-## TO DO LOGIN [/login]
+## LOGIN TO GET TOKEN [/login]
 
-### Todo Login  [POST]
+### GetToken  [POST]
 
 + Request
     + Headers
 
-            Authorization: Basic YXBpcGludGVrOnNlY3JldA==
+             Authorization: Basic YXBpcGludGVrOnNlY3JldA==
    
 
 + Response 200 (application/json)
@@ -30,10 +30,9 @@ This is Pintek's API documentation. Here you will find the guidelines for gettin
         ]
         
 
-
         
-## Query Borrower EDU Loan [/graphql{?token,EDUBorrowerLoan}]
-Get data Edu Borrower loan.
+##Education Loan [/graphql{?token,EDUBorrowerLoan}]
+Get data education Loan.
 
 **Request Body**
 
@@ -65,9 +64,10 @@ Get data Edu Borrower loan.
   }
 }
 ```
-### Get List Borrower Education Loan [GET]
+### GetListEducationLoan [GET]
 + Parameters
-    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) ... Type of bit to retrieve: 1: Bits, 2: Newsletter
+
+    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) Token expired 15 Minutes
 
 + Request (application/json)
 
@@ -107,8 +107,8 @@ Get data Edu Borrower loan.
             }
             
 
-## Query Borrower SME Loan [/graphql{?token,SMEBorrowerLoan}]
-Get data Edu Borrower loan.
+##SME Loan [/graphql{?token,SMEBorrowerLoan}]
+Get data sme loan.
 
 **Request Body**
 
@@ -140,9 +140,10 @@ Get data Edu Borrower loan.
   }
 }
 ```
-### Get List Borrower SME Loan [GET]
+### GetListSMELoan [GET]
 + Parameters
-    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) ... Type of bit to retrieve: 1: Bits, 2: Newsletter
+
+    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) Token expired 15 Minutes
 
 + Request (application/json)
       
