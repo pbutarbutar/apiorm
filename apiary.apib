@@ -32,7 +32,7 @@ This is Pintek's API documentation. Here you will find the guidelines for gettin
 
 
         
-## Query Object [/graphql/query{?EDUBorrowerLoan}]
+## Query Object [/graphql?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&{?EDUBorrowerLoan}]
 Get data Edu Borrower loan.
 
 **Request Body**
@@ -65,14 +65,13 @@ Get data Edu Borrower loan.
   }
 }
 ```
-### Get EDUBorrowerLoan [POST]
+### Get EDUBorrowerLoan [GET]
 
 + Request (application/json)
 
     + Body
 
             {
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0",
                 "query": "{ EDUBorrowerLoan { app_num applicant_name credit_score loan_app_id principal risk_level student_name student_phone loan_detail{loan_app_id student_name student_phone institution_name dp_to_pintek application_type program_fee mdr actual_loan_principal bank_code acc_number cof} } }"
             }
 
