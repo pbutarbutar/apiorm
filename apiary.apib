@@ -1,0 +1,105 @@
+FORMAT: 1A
+HOST: http://3.88.248.136:9000/
+
+# PINTEKID API 
+
+This is API Pintek to access for collect data Loan Borrower Education Loan and Borrower SME Loan
+
+
+# GRAPHQL API PINTEK
+
+This is Pintek's API documentation. Here you will find the guidelines for getting started with the API.
+
+
+## TO DO LOGIN [/login]
+
+### Todo Login  [POST]
+
++ Request
+    + Headers
+
+            Authorization: Basic YXBpcGludGVrOnNlY3JldA==
+   
+
++ Response 200 (application/json)
+
+        [
+            {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0"
+            }
+        ]
+        
+
+
+        
+## Query Object [/graphql?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&{?EDUBorrowerLoan}]
+Get data Edu Borrower loan.
+
+**Request Body**
+
+```
+{
+  EDUBorrowerLoan {
+    app_num
+    applicant_name
+    application_type
+    credit_score
+    loan_app_id
+    principal
+    risk_level
+    student_name
+    student_phone
+    loan_detail {
+        loan_app_id
+        student_name
+        student_phone
+        institution_name
+        dp_to_pintek
+        program_fee
+        mdr
+        actual_loan_principal
+        bank_code
+        acc_number
+        cof
+    }
+  }
+}
+```
+### Get EDUBorrowerLoan [GET]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "query": "{ EDUBorrowerLoan { app_num applicant_name credit_score loan_app_id principal risk_level student_name student_phone loan_detail{loan_app_id student_name student_phone institution_name dp_to_pintek application_type program_fee mdr actual_loan_principal bank_code acc_number cof} } }"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Body
+
+            {
+              "data": {
+                "EDUBorrowerLoan": {
+                  "app_num":"AP/05/11/2019/00002",
+                  "applicant_name":"Pep Guardiola",
+                  "credit_score":0,
+                  "loan_app_id":21,
+                  "loan_detail":{
+                    "acc_number":"",
+                    "actual_loan_principal":0,
+                    "application_type":"b",
+                    "bank_code":"",
+                    "cof":0,
+                    "dp_to_pintek":1,
+                    "institution_name":"Akademi Pariwisata Indonesia",
+                    "loan_app_id":21,
+                    "mdr":0,
+                    "program_fee":22500000,
+                    "student_name":"Leroy Sane",
+                    "student_phone":"81277776666"
+                  }
+                }
+              }
+            }
