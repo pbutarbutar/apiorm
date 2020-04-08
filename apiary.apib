@@ -74,7 +74,31 @@ Get data education Loan.
     + Body
 
             {
-                "query": "{ EDUBorrowerLoan { app_num applicant_name credit_score loan_app_id principal risk_level student_name student_phone loan_detail{loan_app_id student_name student_phone institution_name dp_to_pintek application_type program_fee mdr actual_loan_principal bank_code acc_number cof} } }"
+                "query": "{ EDUBorrowerLoan { 
+                                app_num 
+                                applicant_name 
+                                credit_score 
+                                loan_app_id 
+                                principal 
+                                risk_level 
+                                student_name 
+                                student_phone 
+                                loan_detail{
+                                    loan_app_id 
+                                    student_name 
+                                    student_phone 
+                                    institution_name 
+                                    dp_to_pintek 
+                                    application_type 
+                                    program_fee 
+                                    mdr 
+                                    actual_loan_principal 
+                                    bank_code 
+                                    acc_number 
+                                    cof
+                                } 
+                                } 
+                            }"
             }
 
 + Response 200 (application/json; charset=utf-8)
@@ -150,7 +174,31 @@ Get data sme loan.
     + Body
 
             {
-                "query": "{ SMEBorrowerLoan { app_num applicant_name credit_score loan_app_id principal risk_level student_name student_phone loan_detail{loan_app_id student_name student_phone institution_name dp_to_pintek application_type program_fee mdr actual_loan_principal bank_code acc_number cof} } }"
+                "query": "{ SMEBorrowerLoan { 
+                            app_num 
+                            applicant_name 
+                            credit_score 
+                            loan_app_id 
+                            principal 
+                            risk_level 
+                            student_name 
+                            student_phone 
+                            loan_detail{
+                                loan_app_id 
+                                student_name 
+                                student_phone 
+                                institution_name 
+                                dp_to_pintek 
+                                application_type 
+                                program_fee 
+                                mdr 
+                                actual_loan_principal 
+                                bank_code 
+                                acc_number 
+                                cof
+                            } 
+                            } 
+                        }"
             }
 
 + Response 200 (application/json; charset=utf-8)
