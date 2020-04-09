@@ -33,17 +33,13 @@ and if your token has expired you can do again request new token.
         
 
 ## Singup Registrant [/graphql{?token,SignupRegistrant}]
-Sign Up Registrant for login (In Progress Development)
+Sign Up Registrant for login
 
 **Request Body**
 
 ```
 mutation {
   SignupRegistrant(registrant_id,email,fullname,phone_no, password) {
-    email
-    fullname
-    password
-    phone_no
     registrant_id
   }
 }
@@ -59,31 +55,7 @@ mutation {
     + Body
 
             {
-                "query": "{ EDUBorrowerLoan { 
-                                app_num 
-                                applicant_name 
-                                credit_score 
-                                loan_app_id 
-                                principal 
-                                risk_level 
-                                student_name 
-                                student_phone 
-                                loan_detail{
-                                    loan_app_id 
-                                    student_name 
-                                    student_phone 
-                                    institution_name 
-                                    dp_to_pintek 
-                                    application_type 
-                                    program_fee 
-                                    mdr 
-                                    actual_loan_principal 
-                                    bank_code 
-                                    acc_number 
-                                    cof
-                                } 
-                                } 
-                            }"
+                "query": "mutation {SignupRegistrant(registrant_id:1, email: "testuser@yahoo.com", fullname: "Test User", phone_no: "08134848", password: "passwordsecret") {registrant_id}}"
             }
 
 + Response 200 (application/json; charset=utf-8)
@@ -92,26 +64,7 @@ mutation {
 
             {
               "data": {
-                "EDUBorrowerLoan": {
-                  "app_num":"AP/05/11/2019/00002",
-                  "applicant_name":"Pep Guardiola",
-                  "credit_score":0,
-                  "loan_app_id":21,
-                  "loan_detail":{
-                    "acc_number":"",
-                    "actual_loan_principal":0,
-                    "application_type":"b",
-                    "bank_code":"",
-                    "cof":0,
-                    "dp_to_pintek":1,
-                    "institution_name":"Akademi Pariwisata Indonesia",
-                    "loan_app_id":21,
-                    "mdr":0,
-                    "program_fee":22500000,
-                    "student_name":"Leroy Sane",
-                    "student_phone":"81277776666"
-                  }
-                }
+                {"SignupRegistrant":{"registrant_id":227}}}
               }
             }
             
