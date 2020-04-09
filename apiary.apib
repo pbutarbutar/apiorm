@@ -34,7 +34,7 @@ and if your token has expired you can do again request new token.
 
 ## Singup Registrant [/graphql{?token,SignupRegistrant}]
 Signup Registrant for login.
-Access method API using by token_api
+To access this method use token_api
 
 **Request Body**
 
@@ -77,15 +77,6 @@ Use token_api to access this method.
 This sing-in method will generate to produce token_app. 
 This token will used in some api related fetures app web
 
-**Request Body**
-
-```
-mutation {
-  SignIn(email,password) {
-    success
-  }
-}
-```
 ### SignIn [POST]
 
 + Parameters
