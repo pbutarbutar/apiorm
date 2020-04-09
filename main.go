@@ -67,7 +67,8 @@ func main() {
 	}
 	http.Handle("/graphql", gqlHandler())
 	http.Handle("/graphiql", graphiqlHandler)
-	http.HandleFunc("/login", security.CreateTokenEndpoint)
+	http.HandleFunc("/createtokenapi", security.CreateTokenEndpoint)
+	http.HandleFunc("/loginregistrant", security.CreateTokenUserRegistrantEndpoint)
 	fmt.Println("Server Runing port " + config.PORT)
 	http.ListenAndServe(":"+config.PORT, nil)
 

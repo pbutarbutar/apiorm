@@ -13,6 +13,7 @@ type UserRegistrant struct {
 	Fullname     string `json:"fullname" validate:"required"`
 	PhoneNo      string `json:"phone_no" validate:"required"`
 	Password     string `json:"password" validate:"required"`
+	Success      bool   `json:"success"`
 }
 
 type EduLoan struct {
