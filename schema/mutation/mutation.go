@@ -32,9 +32,9 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 			Type: types.UserRegistrantTypes,
 			//config param argument
 			Args: graphql.FieldConfigArgument{
-				"registrant_id": &graphql.ArgumentConfig{
+				/*"registrant_id": &graphql.ArgumentConfig{
 					Type: graphql.NewNonNull(graphql.Int),
-				},
+				},*/
 				"email": &graphql.ArgumentConfig{
 					Type: graphql.NewNonNull(graphql.String),
 				},

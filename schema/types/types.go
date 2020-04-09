@@ -46,6 +46,9 @@ var UserRegistrantTypes = graphql.NewObject(graphql.ObjectConfig{
 		"password": &graphql.Field{
 			Type: graphql.String,
 		},
+		"success": &graphql.Field{
+			Type: graphql.String,
+		},
 	},
 })
 

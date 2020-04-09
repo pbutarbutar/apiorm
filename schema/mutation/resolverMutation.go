@@ -64,6 +64,7 @@ func SignupRegistrantMutation(param graphql.ResolveParams) (interface{}, error) 
 	}
 	log.Println(registrantid)
 	user.RegistrantId = registrantid
+	user.Success = true
 	return user, err
 }
 
