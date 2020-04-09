@@ -27,13 +27,14 @@ and if your token has expired you can do again request new token.
 
         [
             {
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0"
+                "token_api": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0"
             }
         ]
         
 
 ## Singup Registrant [/graphql{?token,SignupRegistrant}]
-Signup Registrant for login
+Signup Registrant for login.
+Access method API using by token_api
 
 **Request Body**
 
@@ -49,7 +50,7 @@ mutation {
 
 + Parameters
 
-    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) Token expired 15 Minutes
+    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) 
 
 + Request (application/json)
 
@@ -70,8 +71,11 @@ mutation {
             }
             
             
-## Sign In [/graphql{?token,SignIn}]
-Sign In Registrant (In Progress Development)
+## Sign-in Registrant [/graphql{?token,SignIn}]
+Sign-in Registrant.
+Use token_api to access this method. 
+This sing-in method will generate to produce token_app. 
+This token will used in some api related fetures app web
 
 **Request Body**
 
@@ -86,14 +90,15 @@ mutation {
 
 + Parameters
 
-    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) Token expired 15 Minutes
+    + token (required, string, `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYxNTIwMTYsInBhc3N3b3JkIjoic2VjcmV0IiwidXNlcm5hbWUiOiJhcGlwaW50ZWsifQ.oejtEV0e35zFnp8e9r172aF2cSRIlhkFSc0hcbkvJv0`) 
 
 + Request (application/json)
 
     + Body
 
             {
-                "query": "mutation {SignIn(email: "testuser@yahoo.com", fullname: "Test User", phone_no: "08134848", password: "passwordsecret") {registrant_id}}"
+                "email": "Dtest2@yahoo.com",
+                "password": "qwerty122"
             }
 
 + Response 200 (application/json; charset=utf-8)
@@ -101,14 +106,14 @@ mutation {
     + Body
 
             {
-              "data": {
-                {"SignupRegistrant":{"registrant_id": 233,"success": "true"}}}
+              "token_app":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODY0MjEyNDAsInBhc3N3b3JkIjoiMWZkZTgwZGUyZDY5M2QyZjRkMjA1MDA0ZTVkYjdiNzIxYjRhNzk4ZSIsInJlZ2lzdHJhbnRfaWQiOjIzNCwidXNlcm5hbWUiOiJEdGVzdDJAeWFob28uY29tIn0.kE0SHrCV3MowWwFL6Hxq20wSbVPmeLpvfgotolXuaxA"
               }
             }
 
         
 ##Education Loan [/graphql{?token,EDUBorrowerLoan}]
 Get data education Loan.
+Access method API using by token_api
 
 **Request Body**
 
@@ -209,6 +214,7 @@ Get data education Loan.
 
 ##SME Loan [/graphql{?token,SMEBorrowerLoan}]
 Get data sme loan.
+Access method API using by token_api
 
 **Request Body**
 
