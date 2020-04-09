@@ -28,6 +28,27 @@ var ProductTypes = graphql.NewObject(graphql.ObjectConfig{
 	},
 })
 
+var UserRegistrantTypes = graphql.NewObject(graphql.ObjectConfig{
+	Name: "UserRegistrant",
+	Fields: graphql.Fields{
+		"registrant_id": &graphql.Field{
+			Type: graphql.Int,
+		},
+		"email": &graphql.Field{
+			Type: graphql.String,
+		},
+		"fullname": &graphql.Field{
+			Type: graphql.String,
+		},
+		"phone_no": &graphql.Field{
+			Type: graphql.String,
+		},
+		"password": &graphql.Field{
+			Type: graphql.String,
+		},
+	},
+})
+
 var LoanEduAppDetailTypes = graphql.NewObject(graphql.ObjectConfig{
 	Name: "LoanEduDetail",
 	Fields: graphql.Fields{

@@ -8,7 +8,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-func ProductResolve(param graphql.ResolveParams) (interface{}, error) {
+/*func ProductResolve(param graphql.ResolveParams) (interface{}, error) {
 
 	_, err := security.ValidateJWT(param.Context.Value("token").(string))
 	if err != nil {
@@ -68,7 +68,7 @@ func ProductSingleResolve(param graphql.ResolveParams) (interface{}, error) {
 	}
 
 	return b, nil
-}
+}*/
 
 func EduLoanResolve(param graphql.ResolveParams, status_data int) (interface{}, error) {
 	_, err := security.ValidateJWT(param.Context.Value("token").(string))

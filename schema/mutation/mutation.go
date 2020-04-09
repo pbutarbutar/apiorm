@@ -9,7 +9,7 @@ import (
 var Mutation = graphql.NewObject(graphql.ObjectConfig{
 	Name: "Mutation",
 	Fields: graphql.Fields{
-		"CreateProducts": &graphql.Field{
+		/*"CreateProducts": &graphql.Field{
 			Type: graphql.NewList(types.ProductTypes),
 			//config param argument
 			Args: graphql.FieldConfigArgument{
@@ -27,6 +27,28 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 				},
 			},
 			Resolve: CreateProductMutation,
+		},*/
+		"SignupRegistrant": &graphql.Field{
+			Type: types.UserRegistrantTypes,
+			//config param argument
+			Args: graphql.FieldConfigArgument{
+				"registrant_id": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(graphql.Int),
+				},
+				"email": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(graphql.String),
+				},
+				"fullname": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(graphql.String),
+				},
+				"phone_no": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(graphql.String),
+				},
+				"password": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(graphql.String),
+				},
+			},
+			Resolve: SignupRegistrantMutation,
 		},
 		// untuk membuat object lainya tinggal di ulang
 

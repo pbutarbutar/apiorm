@@ -7,6 +7,14 @@ type Product struct {
 	ProImg   string `json:"PRO_IMG"`
 }
 
+type UserRegistrant struct {
+	RegistrantId int64  `json:"registrant_id"`
+	Email        string `json:"email" validate:"required,email"`
+	Fullname     string `json:"fullname" validate:"required"`
+	PhoneNo      string `json:"phone_no" validate:"required"`
+	Password     string `json:"password" validate:"required"`
+}
+
 type EduLoan struct {
 	AppNum          string  `json:"app_num"`
 	LoanAppId       int     `json:"loan_app_id"`
