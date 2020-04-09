@@ -11,7 +11,7 @@ import (
 	export DATABASE_HOST=localhost:3666
 	export DATABASE_DBNAME=pintekid
 	export DATABASE_USER=?
-	export DATABASE_PASSWORD =?
+	export DATABASE_PASSWORD=?
 */
 
 const PORT = "9001"

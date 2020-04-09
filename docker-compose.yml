@@ -25,4 +25,6 @@ services:
         - MYSQL_PASSWORD=@root
         - DATABASE_HOST=db
      volumes:
+        - ./docker/my.cnf:/etc/my.cnf
         - ./mysql_data:/var/lib/mysql
+     command: --sql_mode=""
