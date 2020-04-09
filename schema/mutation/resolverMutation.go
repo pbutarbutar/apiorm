@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"pintekid/config"
+	"pintekid/libs/security"
 	"pintekid/schema/types"
 
 	"github.com/graphql-go/graphql"
@@ -29,6 +30,11 @@ import (
 }*/
 
 func SignupRegistrantMutation(param graphql.ResolveParams) (interface{}, error) {
+	_, errsecure := security.ValidateJWT(param.Context.Value("token").(string))
+	if errsecure != nil {
+		return nil, errsecure
+	}
+
 	var password = param.Args["password"].(string)
 	var sha = sha1.New()
 	sha.Write([]byte(password))
